@@ -128,6 +128,11 @@ public class MainJFrame extends javax.swing.JFrame {
         //    java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(Level.SEVERE, null, ex);
         //}
         splitPane.setRightComponent(viewJPanel);
+        
+        
+        
+        
+        
     }//GEN-LAST:event_btnViewActionPerformed
 
     /**

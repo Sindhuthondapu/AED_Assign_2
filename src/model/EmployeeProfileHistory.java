@@ -6,6 +6,8 @@ package model;
 
 import java.util.ArrayList;
 
+
+
 /**
  *
  * @author lenovo pc
@@ -34,10 +36,27 @@ public class EmployeeProfileHistory {
         
     }
     
+    /*public void addNewProfiles(EmployeeProfile emp){
+        history.add(emp);
+        
+    }*/
+    
     public void deleteProfile(EmployeeProfile ps){
         history.remove(ps);
+        
     }
+    
+    
+
+    /*public EmployeeProfile updateNewEmployee() {
+        EmployeeProfile newEmployee = new EmployeeProfile();
+        
+        return newEmployee;
+    }*/
 
     
+
+    
+
     
 }

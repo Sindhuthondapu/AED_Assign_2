@@ -20,6 +20,9 @@ public class EmployeeProfile {
     private int cellPhone;
     private String email;
     private String profilePhoto;
+    
+
+    
 
     public String getName() {
         return name;
