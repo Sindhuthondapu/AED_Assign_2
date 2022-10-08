@@ -120,13 +120,7 @@ public class MainJFrame extends javax.swing.JFrame {
         //splitPane.setRightComponent(viewPanel);
         
         ViewJPanel viewJPanel=null;
-        //try {
-            viewJPanel=new ViewJPanel(history);
-        //} 
-       // catch (IOException ex)
-       // {
-        //    java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(Level.SEVERE, null, ex);
-        //}
+        viewJPanel=new ViewJPanel(history);
         splitPane.setRightComponent(viewJPanel);
         
         

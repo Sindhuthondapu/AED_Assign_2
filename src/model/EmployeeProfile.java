@@ -17,7 +17,7 @@ public class EmployeeProfile {
     private String level;
     private String teamInfo;
     private String positionTitle;
-    private int cellPhone;
+    private String cellPhone;
     private String email;
     private String profilePhoto;
     
@@ -88,11 +88,11 @@ public class EmployeeProfile {
         this.positionTitle = positionTitle;
     }
 
-    public int getCellPhone() {
+    public String getCellPhone() {
         return cellPhone;
     }
 
-    public void setCellPhone(int cellPhone) {
+    public void setCellPhone(String cellPhone) {
         this.cellPhone = cellPhone;
     }
 

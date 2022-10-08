@@ -13,8 +13,10 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import static javax.swing.JFileChooser.APPROVE_OPTION;
 import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import model.EmployeeProfile;
@@ -82,17 +84,17 @@ public class ViewJPanel extends javax.swing.JPanel {
 
         tblEmployee.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Name", "Employee ID", "Age", "Gender", "Start Date", "Level", "Team Info", "Position Title", "Mobile No", "Email", "Photo"
+                "Name", "Employee ID", "Age", "Gender", "Start Date", "Level", "Team Info", "Position Title", "Mobile No", "Email"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -114,8 +116,8 @@ public class ViewJPanel extends javax.swing.JPanel {
             tblEmployee.getColumnModel().getColumn(5).setResizable(false);
             tblEmployee.getColumnModel().getColumn(6).setResizable(false);
             tblEmployee.getColumnModel().getColumn(7).setResizable(false);
+            tblEmployee.getColumnModel().getColumn(8).setResizable(false);
             tblEmployee.getColumnModel().getColumn(9).setResizable(false);
-            tblEmployee.getColumnModel().getColumn(10).setResizable(false);
         }
 
         lbl_Search.setText("Search");
@@ -183,11 +185,11 @@ public class ViewJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane1))
@@ -380,7 +382,6 @@ public class ViewJPanel extends javax.swing.JPanel {
             txtPositionTitle.setText("");
             txtMobile.setText("");
             txtEmail.setText("");
-            lblProfilePhoto.setText("");
             lblProfilePhoto.setIcon(null);
     }//GEN-LAST:event_btnDeleteActionPerformed
 
@@ -390,7 +391,7 @@ public class ViewJPanel extends javax.swing.JPanel {
         int selectedRowIndex = tblEmployee.getSelectedRow();
         //get table model
         DefaultTableModel model = (DefaultTableModel)tblEmployee.getModel();
-        //EmployeeProfile selectedEmployee = (EmployeeProfile) model.getValueAt(selectedRowIndex, 0);
+        EmployeeProfile selectedEmployee = (EmployeeProfile) model.getValueAt(selectedRowIndex, 0);
         
         if(tblEmployee.getSelectedRowCount()==1){
             
@@ -405,13 +406,14 @@ public class ViewJPanel extends javax.swing.JPanel {
             String teamInfo = txtTeamInfo.getText();
             String positionTitle = txtPositionTitle.getText();
             String email = txtEmail.getText();
-            int cellPhone = Integer.parseInt(txtMobile.getText());
-            String profilePhoto = lblProfilePhoto.getText();
+            String cellPhone = txtMobile.getText();
+            //String profilePhoto = txtBrowseImage.getText();
         
         //set updated values
         
-        model.setValueAt(name, selectedRowIndex, 0);
-        model.setValueAt(employeeID, selectedRowIndex, 1);
+        
+        model.setValueAt(name, tblEmployee.getSelectedRow(), 0);
+        model.setValueAt(employeeID, tblEmployee.getSelectedRow(), 1);
         model.setValueAt(age, tblEmployee.getSelectedRow(), 2);
         model.setValueAt(gender, tblEmployee.getSelectedRow(), 3);
         model.setValueAt(startDate, tblEmployee.getSelectedRow(), 4);
@@ -420,12 +422,21 @@ public class ViewJPanel extends javax.swing.JPanel {
         model.setValueAt(positionTitle, tblEmployee.getSelectedRow(), 7);
         model.setValueAt(cellPhone, tblEmployee.getSelectedRow(), 8);
         model.setValueAt(email, tblEmployee.getSelectedRow(), 9);
-        model.setValueAt(email, tblEmployee.getSelectedRow(), 10);
+        //model.setValueAt(profilePhoto, tblEmployee.getSelectedRow(), 10);
         
-        //populateTable();
-           
-       //history.updateNewEmployee(selectedEmployee);
+        selectedEmployee.setName(txtName.getText());
+        selectedEmployee.setEmployeeID(txtEmployeeID.getText());
+        selectedEmployee.setAge(age);
+        selectedEmployee.setGender(txtGender.getText());
+        selectedEmployee.setStartDate(txtStartDate.getText());
+        selectedEmployee.setLevel(txtLevel.getText());
+        selectedEmployee.setTeamInfo(txtTeamInfo.getText());
+        selectedEmployee.setPositionTitle(txtPositionTitle.getText());
+        selectedEmployee.setCellPhone(cellPhone);
+        selectedEmployee.setEmail(txtEmail.getText());
+        //selectedEmployee.setProfilePhoto(txtBrowseImage.getText());
         
+       
         //update message display
         JOptionPane.showMessageDialog(this, "Updated successfully.");
         
@@ -456,6 +467,7 @@ public class ViewJPanel extends javax.swing.JPanel {
             txtMobile.setText("");
             txtEmail.setText("");
             lblProfilePhoto.setText("");
+            lblProfilePhoto.setIcon(null);
         
         DefaultTableModel model = (DefaultTableModel) tblEmployee.getModel();
         TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(model);
@@ -475,7 +487,7 @@ public class ViewJPanel extends javax.swing.JPanel {
 
     private void tblEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblEmployeeMouseClicked
         // TODO add your handling code here:
-        int selectedRowIndex = tblEmployee.getSelectedRow();
+        /*int selectedRowIndex = tblEmployee.getSelectedRow();
         DefaultTableModel model = (DefaultTableModel) tblEmployee.getModel();
         EmployeeProfile selectedEmployee = (EmployeeProfile) model.getValueAt(selectedRowIndex, 0);
         //set data to the tex field when row is selected
@@ -519,7 +531,7 @@ public class ViewJPanel extends javax.swing.JPanel {
         //Shrinking image to label size
         Image resizeimg = img.getScaledInstance(150, 150,Image.SCALE_SMOOTH);
         ImageIcon imageIcon = new ImageIcon(resizeimg);
-        lblProfilePhoto.setIcon(imageIcon);
+        lblProfilePhoto.setIcon(imageIcon);*/
         
        
     }//GEN-LAST:event_tblEmployeeMouseClicked

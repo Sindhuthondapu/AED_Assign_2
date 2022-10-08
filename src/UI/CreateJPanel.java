@@ -4,6 +4,7 @@
  */
 package UI;
 
+import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.io.File;
@@ -70,6 +71,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         txtGender = new javax.swing.JTextField();
         txtProfilePhoto = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
+        lblEmailMessage = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -142,6 +144,9 @@ public class CreateJPanel extends javax.swing.JPanel {
             }
         });
 
+        lblEmailMessage.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        lblEmailMessage.setForeground(new java.awt.Color(255, 0, 0));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -158,45 +163,44 @@ public class CreateJPanel extends javax.swing.JPanel {
                 .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(txtTeamInfo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
-                            .addComponent(txtStartDate, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtName, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtMobile)
-                            .addComponent(txtProfilePhoto))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(btnUpload)
-                                .addGap(25, 25, 25))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel3))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(txtGender, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
-                        .addComponent(jLabel4)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(btnRefresh)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(txtTeamInfo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
+                                    .addComponent(txtStartDate, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtName, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtMobile)
+                                    .addComponent(txtProfilePhoto))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(txtGender, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel4)))
                         .addGap(28, 28, 28)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtAge)
-                            .addComponent(txtEmail)
-                            .addComponent(txtPositionTitle)
-                            .addComponent(txtLevel)
-                            .addComponent(txtEmployeeID, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(50, 50, 50)
+                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(lblEmailMessage, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtAge, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
+                                .addComponent(txtEmail, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtPositionTitle, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtLevel, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtEmployeeID)))
+                        .addGap(22, 22, 22))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(22, 22, 22))
+                        .addComponent(btnUpload)
+                        .addGap(103, 103, 103)
+                        .addComponent(btnRefresh)
+                        .addGap(106, 106, 106)
+                        .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(131, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,40 +211,49 @@ public class CreateJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
                     .addComponent(txtEmployeeID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
+                .addGap(48, 48, 48)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5)
-                    .addComponent(jLabel4)
                     .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(47, 47, 47)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
-                    .addComponent(jLabel7)
-                    .addComponent(txtLevel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtLevel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel7)))
+                .addGap(52, 52, 52)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtTeamInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8)
                     .addComponent(txtPositionTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
-                .addGap(44, 44, 44)
+                .addGap(57, 57, 57)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(txtMobile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11)
                     .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(txtMobile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(lblEmailMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
                 .addComponent(jLabel13)
-                .addGap(24, 24, 24)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtProfilePhoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12)
-                    .addComponent(btnUpload)
-                    .addComponent(btnRefresh)
-                    .addComponent(btnSave))
-                .addContainerGap(179, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(109, 109, 109)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnUpload)
+                            .addComponent(btnRefresh)
+                            .addComponent(btnSave))
+                        .addContainerGap(84, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtProfilePhoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -255,7 +268,7 @@ public class CreateJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(52, 52, 52)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -264,23 +277,51 @@ public class CreateJPanel extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addGap(28, 28, 28)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
+        // TODO add your handling code here:
+
+        //Clearing all the data after clicking on refresh
+        txtName.setText("");
+        txtEmployeeID.setText("");
+        txtAge.setText("");
+        txtGender.setText("");
+        txtStartDate.setText("");
+        txtLevel.setText("");
+        txtTeamInfo.setText("");
+        txtPositionTitle.setText("");
+        txtMobile.setText("");
+        txtEmail.setText("");
+        txtProfilePhoto.setText("");
+    }//GEN-LAST:event_btnRefreshActionPerformed
+
+    private void btnUploadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUploadActionPerformed
+        // TODO add your handling code here:
+
+            JFileChooser chooser = new JFileChooser();
+            chooser.showOpenDialog(null);
+            File f=chooser.getSelectedFile();
+            String filename = f.getAbsolutePath();
+            txtProfilePhoto.setText(filename);
+
+    }//GEN-LAST:event_btnUploadActionPerformed
+
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
-        
+
         //If any field is empty then display the message "Please enter all data"
         if(txtName.getText().equals("")||txtEmployeeID.getText().equals("")||txtAge.getText().equals("")
-                ||txtStartDate.getText().equals("")||txtLevel.getText().equals("")||txtTeamInfo.getText().equals("")
-                ||txtPositionTitle.getText().equals("")||txtMobile.getText().equals("")||txtEmail.getText().equals("")||txtProfilePhoto.getText().equals("")){
+            ||txtStartDate.getText().equals("")||txtLevel.getText().equals("")||txtTeamInfo.getText().equals("")
+            ||txtPositionTitle.getText().equals("")||txtMobile.getText().equals("")||txtEmail.getText().equals("")||txtProfilePhoto.getText().equals("")){
             JOptionPane.showMessageDialog(this, "Please enter all data");
         }
-        
+
         //If all the data is given then perform the below steps
         //the data entered in these fields are assigned to the variables here
-        
+
         else{
             String name = txtName.getText();
             String employeeID = txtEmployeeID.getText();
@@ -291,12 +332,12 @@ public class CreateJPanel extends javax.swing.JPanel {
             String teamInfo = txtTeamInfo.getText();
             String positionTitle = txtPositionTitle.getText();
             String email = txtEmail.getText();
-            int cellPhone = Integer.parseInt(txtMobile.getText());
+            String cellPhone = txtMobile.getText();
             String profilePhoto = txtProfilePhoto.getText();
-            
-            //Creating an object and setting the values to the fields 
+
+            //Creating an object and setting the values to the fields
             EmployeeProfile ps = history.addNewProfiles();
-            
+
             ps.setName(name);
             ps.setEmployeeID(employeeID);
             ps.setAge(age);
@@ -308,10 +349,10 @@ public class CreateJPanel extends javax.swing.JPanel {
             ps.setCellPhone(cellPhone);
             ps.setEmail(email);
             ps.setProfilePhoto(profilePhoto);
-            
+
             //If all the message is saved properlt then this message will display
             JOptionPane.showMessageDialog(this, "New employee profile is added.");
-            
+
             //Clearing all the data after getting saved
             txtName.setText("");
             txtEmployeeID.setText("");
@@ -324,52 +365,22 @@ public class CreateJPanel extends javax.swing.JPanel {
             txtMobile.setText("");
             txtEmail.setText("");
             txtProfilePhoto.setText("");
-              
+
         }
     }//GEN-LAST:event_btnSaveActionPerformed
 
-    private void btnUploadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUploadActionPerformed
+    private void txtEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyPressed
         // TODO add your handling code here:
-        
-        /*JFileChooser browseImageFile = new JFileChooser();
-        //Filter image extensions
-        FileNameExtensionFilter fnep = new FileNameExtensionFilter("IMAGES", "png", "jpg", "jpeg");
-        browseImageFile.addChoosableFileFilter(fnep);
-        int showOpenDialogue = browseImageFile.showOpenDialog(null);
-        
-        if (showOpenDialogue == APPROVE_OPTION){
-            File selectedImageFile = browseImageFile.getSelectedFile();
-            String profilePhoto = selectedImageFile.getAbsolutePath();
-            JOptionPane.showMessageDialog(null, "Image Uploaded Successfully");
-            //Display image on jLable
-            ImageIcon ii = new ImageIcon(profilePhoto);
-            //Resize image to fit to jLable
-            Image image = ii.getImage().getScaledInstance(lblPhoto.getWidth(), lblPhoto.getHeight(), Image.SCALE_SMOOTH);
-            lblPhoto.setIcon(new ImageIcon(image));*/
-        JFileChooser chooser = new JFileChooser();
-        chooser.showOpenDialog(null);
-        File f=chooser.getSelectedFile();
-        String filename = f.getAbsolutePath();
-        txtProfilePhoto.setText(filename);  
-        
-    }//GEN-LAST:event_btnUploadActionPerformed
+        boolean status = Validation.email_Validation(txtEmail.getText());
 
-    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
-        // TODO add your handling code here:
-        
-        //Clearing all the data after clicking on refresh 
-            txtName.setText("");
-            txtEmployeeID.setText("");
-            txtAge.setText("");
-            txtGender.setText("");
-            txtStartDate.setText("");
-            txtLevel.setText("");
-            txtTeamInfo.setText("");
-            txtPositionTitle.setText("");
-            txtMobile.setText("");
-            txtEmail.setText("");
-            txtProfilePhoto.setText("");
-    }//GEN-LAST:event_btnRefreshActionPerformed
+        if(status){
+            lblEmailMessage.setText((""));
+        }else{
+            lblEmailMessage.setText(("Invalid email address"));
+        }
+
+    }//GEN-LAST:event_txtEmailKeyPressed
+
 //Data Validation for MOBILE
     private void txtMobileKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMobileKeyPressed
         // TODO add your handling code here:
@@ -378,37 +389,56 @@ public class CreateJPanel extends javax.swing.JPanel {
         String cellPhone = txtMobile.getText();
         //get length of string
         int length = cellPhone.length();
-        
         char c = evt.getKeyChar();
-        
         //check for numbrt 0 to 9
         if(evt.getKeyChar()>='0' && evt.getKeyChar()<='9'){
             //check for length not more than 10 digits
             if(length<10){
                 //editable true
                 txtMobile.setEditable(true);
-            
+
             }else{
                 //not editable if length more than 10 digit
                 txtMobile.setEditable(false);
             }
         }else{
-                   //now allow keys 'back space' and delete for edit
-                    if(evt.getExtendedKeyCode()==KeyEvent.VK_BACK_SPACE){
-                        //THEN ALLOW EDITABLE
-                        txtMobile.setEditable(true);
-                    }
-                    else{
-                    txtMobile.setEditable(false);
-                    }
-                    
+            //now allow keys 'back space' and delete for edit
+            if(evt.getExtendedKeyCode()==KeyEvent.VK_BACK_SPACE){
+                //THEN ALLOW EDITABLE
+                txtMobile.setEditable(true);
+            }
+            else{
+                txtMobile.setEditable(false);
+            }
+
         }
     }//GEN-LAST:event_txtMobileKeyPressed
+
+    private void txtAgeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAgeKeyPressed
+        // TODO add your handling code here:
+        String age = txtAge.getText();
+        //get length of string
+        int length = age.length();
+        char c = evt.getKeyChar();
+        //check for numbrt 0 to 9
+        if(evt.getKeyChar()>='0' && evt.getKeyChar()<='9'){
+            //check for length not more than 10 digits
+        }else{
+            //now allow keys 'back space' and delete for edit
+            if(evt.getExtendedKeyCode()==KeyEvent.VK_BACK_SPACE){
+                //THEN ALLOW EDITABLE
+                txtAge.setEditable(true);
+            }
+            else{
+                txtAge.setEditable(false);
+            }
+        }
+    }//GEN-LAST:event_txtAgeKeyPressed
 
     private void txtNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyPressed
         // TODO add your handling code here:
         //textfield that accept letter whitespace, delete backspace only
-        
+
         char c = evt.getKeyChar();
         if(Character.isLetter(c)||Character.isWhitespace(c)||Character.isISOControl(c)){
             //ISO control for edit operation
@@ -416,46 +446,9 @@ public class CreateJPanel extends javax.swing.JPanel {
             txtName.setEditable(true);
         }else{
             txtName.setEditable(false);
-            
+
         }
     }//GEN-LAST:event_txtNameKeyPressed
-
-    private void txtAgeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAgeKeyPressed
-        // TODO add your handling code here:
-        String age = txtAge.getText();
-        //get length of string
-        int length = age.length();
-        
-        char c = evt.getKeyChar();
-        
-        //check for numbrt 0 to 9
-        if(evt.getKeyChar()>='0' && evt.getKeyChar()<='9'){
-            //check for length not more than 10 digits
-            
-        }else{
-                   //now allow keys 'back space' and delete for edit
-                    if(evt.getExtendedKeyCode()==KeyEvent.VK_BACK_SPACE){
-                        //THEN ALLOW EDITABLE
-                        txtAge.setEditable(true);
-                    }
-                    else{
-                    txtAge.setEditable(false);
-                    }
-        }
-    }//GEN-LAST:event_txtAgeKeyPressed
-
-    private void txtEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyPressed
-        // TODO add your handling code here:
-       /* boolean status = Validation.email_Validation(txtEmail.getText());
-        
-        if(status){
-            lblMessage.setText(("Valid email"));
-        }else{
-            lblMessage.setText("Not a Valid email");
-        }*/
-        
-        
-    }//GEN-LAST:event_txtEmailKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -477,6 +470,7 @@ public class CreateJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblEmailMessage;
     private javax.swing.JTextField txtAge;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtEmployeeID;
