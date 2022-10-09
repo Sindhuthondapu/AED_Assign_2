@@ -84,23 +84,12 @@ public class ViewJPanel extends javax.swing.JPanel {
 
         tblEmployee.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "Name", "Employee ID", "Age", "Gender", "Start Date", "Level", "Team Info", "Position Title", "Mobile No", "Email"
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        ));
         tblEmployee.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tblEmployeeMouseClicked(evt);
@@ -108,16 +97,8 @@ public class ViewJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblEmployee);
         if (tblEmployee.getColumnModel().getColumnCount() > 0) {
-            tblEmployee.getColumnModel().getColumn(0).setResizable(false);
-            tblEmployee.getColumnModel().getColumn(1).setResizable(false);
-            tblEmployee.getColumnModel().getColumn(2).setResizable(false);
-            tblEmployee.getColumnModel().getColumn(3).setResizable(false);
             tblEmployee.getColumnModel().getColumn(4).setResizable(false);
-            tblEmployee.getColumnModel().getColumn(5).setResizable(false);
             tblEmployee.getColumnModel().getColumn(6).setResizable(false);
-            tblEmployee.getColumnModel().getColumn(7).setResizable(false);
-            tblEmployee.getColumnModel().getColumn(8).setResizable(false);
-            tblEmployee.getColumnModel().getColumn(9).setResizable(false);
         }
 
         lbl_Search.setText("Search");
@@ -188,10 +169,6 @@ public class ViewJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jScrollPane1))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -242,17 +219,21 @@ public class ViewJPanel extends javax.swing.JPanel {
                                         .addComponent(lblProfilePhoto, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGap(22, 22, 22))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(209, 209, 209)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtMobile, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtGender, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
-                                    .addComponent(txtName))))
+                                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addGap(209, 209, 209)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtMobile, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addContainerGap()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(txtGender, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
+                                        .addComponent(txtName)))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -389,6 +370,12 @@ public class ViewJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         
         int selectedRowIndex = tblEmployee.getSelectedRow();
+        if(selectedRowIndex<0){
+            JOptionPane.showMessageDialog(this, "Please select a row for update");
+            return;
+        }
+        
+        
         //get table model
         DefaultTableModel model = (DefaultTableModel)tblEmployee.getModel();
         EmployeeProfile selectedEmployee = (EmployeeProfile) model.getValueAt(selectedRowIndex, 0);
@@ -408,6 +395,7 @@ public class ViewJPanel extends javax.swing.JPanel {
             String email = txtEmail.getText();
             String cellPhone = txtMobile.getText();
             //String profilePhoto = txtBrowseImage.getText();
+            
         
         //set updated values
         
@@ -435,6 +423,7 @@ public class ViewJPanel extends javax.swing.JPanel {
         selectedEmployee.setCellPhone(cellPhone);
         selectedEmployee.setEmail(txtEmail.getText());
         //selectedEmployee.setProfilePhoto(txtBrowseImage.getText());
+        //lblProfilePhoto.setIcon(new ImageIcon(selectedEmployee.getProfilePhoto()));
         
        
         //update message display
@@ -442,14 +431,9 @@ public class ViewJPanel extends javax.swing.JPanel {
         
         
         }
-        else{
-            if(tblEmployee.getRowCount()==0){
-                JOptionPane.showMessageDialog(this, "Table is empty");
-                
-            }else{
-                JOptionPane.showMessageDialog(this, "Please select for update");
-            }
-        }
+        
+            
+        
         
     }//GEN-LAST:event_btnUpdateActionPerformed
 
